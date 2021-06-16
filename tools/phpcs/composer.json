@@ -1,0 +1,7 @@
+{
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "slevomat/coding-standard": "^7.0",
+        "squizlabs/php_codesniffer": "^3.6"
+    }
+}

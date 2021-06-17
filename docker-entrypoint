@@ -1,3 +1,7 @@
 #!/usr/bin/env sh
 
+if [ -n "${INPUT_WORKING_DIR}" ]; then
+  cd "${INPUT_WORKING_DIR}" || exit 1
+fi
+
 find . -type f -not -path "*/vendor/*" | exec "$@"

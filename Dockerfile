@@ -18,29 +18,46 @@ COPY tools /tools
 RUN set -ex; \
     apk update; \
     install-php-extensions \
+        amqp \
+        apcu \
         ast \
+        bcmath \
+        exif \
+        ffi \
+        gd \
+        gmp \
+        imagick \
         intl \
-        opcache \
+        ldap \
         mbstring \
+        memcache \
+        opcache \
+        pdo_pgsql \
+        redis \
+        uuid \
     ; \
     \
-	RUNTIME_DEPS="$( \
-		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
-			| tr ',' '\n' \
-			| sort -u \
-			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
-	)"; \
-	apk add --no-cache $RUNTIME_DEPS; \
-	\
-	ln -s ${PHP_INI_DIR}/php.ini-production ${PHP_INI_DIR}/php.ini; \
-	\
-	wget -O /usr/local/bin/local-php-security-checker https://github.com/fabpot/local-php-security-checker/releases/download/v1.0.0/local-php-security-checker_1.0.0_linux_amd64; \
-	chmod +x /usr/local/bin/local-php-security-checker; \
-	\
-	chmod +x /usr/local/bin/docker-entrypoint; \
-	\
-	composer self-update; \
-	composer global require ergebnis/composer-normalize qossmic/deptrac-shim phpro/grumphp-shim --no-scripts --no-progress; \
+    RUNTIME_DEPS="$( \
+        scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
+        | tr ',' '\n' \
+        | sort -u \
+        | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
+    )"; \
+    apk add --no-cache $RUNTIME_DEPS; \
+    \
+    ln -s ${PHP_INI_DIR}/php.ini-production ${PHP_INI_DIR}/php.ini; \
+    \
+    wget -O /usr/local/bin/local-php-security-checker https://github.com/fabpot/local-php-security-checker/releases/download/v1.0.0/local-php-security-checker_1.0.0_linux_amd64; \
+    chmod +x /usr/local/bin/local-php-security-checker; \
+    \
+    chmod +x /usr/local/bin/docker-entrypoint; \
+    \
+    composer self-update; \
+    composer global require \
+        ergebnis/composer-normalize \
+        qossmic/deptrac-shim \
+        phpro/grumphp-shim \
+    --no-scripts --no-progress; \
     \
     composer install --working-dir=/tools/php-cs-fixer --prefer-dist --no-scripts --no-progress; \
     composer install --working-dir=/tools/phpcs --prefer-dist --no-scripts --no-progress; \

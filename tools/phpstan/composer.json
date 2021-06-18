@@ -1,0 +1,6 @@
+{
+    "require-dev": {
+        "phpstan/phpstan": "^0.12.90",
+        "roave/security-advisories": "dev-latest"
+    }
+}

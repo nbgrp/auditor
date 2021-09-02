@@ -1,10 +1,10 @@
-ARG PHP_VERSION=8.0.9
+ARG PHP_VERSION=8.0.10
 
 
 FROM php:${PHP_VERSION}-cli-alpine
 
 LABEL project="nbgrp/auditor" \
-      version="0.1.0" \
+      version="0.1.1" \
       maintainer="amenshchikov@gmail.com"
 
 ENV COMPOSER_HOME /composer
@@ -60,6 +60,7 @@ RUN set -ex; \
         phpro/grumphp-shim \
     --no-scripts --no-progress; \
     \
+    composer install --working-dir=/tools/phan --prefer-dist --no-scripts --no-progress; \
     composer install --working-dir=/tools/php-cs-fixer --prefer-dist --no-scripts --no-progress; \
     composer install --working-dir=/tools/phpcs --prefer-dist --no-scripts --no-progress; \
     composer install --working-dir=/tools/phpmd --prefer-dist --no-scripts --no-progress; \
@@ -67,7 +68,7 @@ RUN set -ex; \
     composer install --working-dir=/tools/phpstan --prefer-dist --no-scripts --no-progress; \
     composer install --working-dir=/tools/psalm --prefer-dist --no-scripts --no-progress
 
-ENV PATH /composer/vendor/bin:/tools/php-cs-fixer/vendor/bin:/tools/phpcs/vendor/bin:/tools/phpmd/vendor/bin:/tools/phpmnd/vendor/bin:/tools/psalm/vendor/bin:/tools/phpstan/vendor/bin:$PATH
+ENV PATH /composer/vendor/bin:/tools/phan/vendor/bin:/tools/php-cs-fixer/vendor/bin:/tools/phpcs/vendor/bin:/tools/phpmd/vendor/bin:/tools/phpmnd/vendor/bin:/tools/phpstan/vendor/bin:/tools/psalm/vendor/bin:$PATH
 
 ENTRYPOINT [ "docker-entrypoint" ]
 CMD [ "grumphp", "run" ]

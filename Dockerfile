@@ -1,10 +1,10 @@
-ARG PHP_VERSION=8.0.11
+ARG PHP_VERSION=8.0.12
 
 
 FROM php:${PHP_VERSION}-cli-alpine
 
 LABEL project="nbgrp/auditor" \
-      version="0.2.0" \
+      version="0.2.1" \
       maintainer="amenshchikov@gmail.com"
 
 ENV COMPOSER_HOME /composer

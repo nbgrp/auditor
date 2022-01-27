@@ -1,10 +1,10 @@
-ARG PHP_VERSION=8.0.13
+ARG PHP_VERSION=8.0.15
 
 
 FROM php:${PHP_VERSION}-cli-alpine
 
 LABEL project="nbgrp/auditor" \
-      version="0.3.3" \
+      version="0.3.4" \
       maintainer="amenshchikov@gmail.com"
 
 ENV COMPOSER_HOME /composer
@@ -26,6 +26,7 @@ RUN set -ex; \
         ffi \
         gd \
         gmp \
+        igbinary \
         imagick \
         intl \
         ldap \

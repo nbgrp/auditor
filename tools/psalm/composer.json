@@ -11,5 +11,10 @@
         "psalm/plugin-symfony": "^v2.5",
         "roave/security-advisories": "dev-latest",
         "vimeo/psalm": "^4.10"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
 }

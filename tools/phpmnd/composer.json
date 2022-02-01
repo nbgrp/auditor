@@ -7,7 +7,7 @@
         "symfony/polyfill-php80": "*"
     },
     "require-dev": {
-        "povils/phpmnd": "^2.4",
+        "povils/phpmnd": "^2.5",
         "roave/security-advisories": "dev-latest"
     }
 }

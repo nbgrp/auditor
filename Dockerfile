@@ -4,7 +4,7 @@ ARG PHP_VERSION=8.0.15
 FROM php:${PHP_VERSION}-cli-alpine
 
 LABEL project="nbgrp/auditor" \
-      version="0.3.4" \
+      version="0.4.0" \
       maintainer="amenshchikov@gmail.com"
 
 ENV COMPOSER_HOME /composer
@@ -17,6 +17,9 @@ COPY tools /tools
 
 RUN set -ex; \
     apk update; \
+    \
+    apk add ncurses-libs; \
+    \
     install-php-extensions \
         amqp \
         apcu \

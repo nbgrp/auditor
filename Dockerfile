@@ -4,7 +4,7 @@ ARG PHP_VERSION=8.0.15
 FROM php:${PHP_VERSION}-cli-alpine
 
 LABEL project="nbgrp/auditor" \
-      version="0.4.0" \
+      version="0.5.0" \
       maintainer="amenshchikov@gmail.com"
 
 ENV COMPOSER_HOME /composer
@@ -52,7 +52,7 @@ RUN set -ex; \
     ln -s ${PHP_INI_DIR}/php.ini-production ${PHP_INI_DIR}/php.ini; \
     printf "memory_limit = -1\n" >  $PHP_INI_DIR/conf.d/memory_unlimit.ini; \
     \
-    wget -O /usr/local/bin/local-php-security-checker https://github.com/fabpot/local-php-security-checker/releases/download/v1.0.0/local-php-security-checker_1.0.0_linux_amd64; \
+    wget -O /usr/local/bin/local-php-security-checker https://github.com/fabpot/local-php-security-checker/releases/download/v1.2.0/local-php-security-checker_1.2.0_linux_amd64; \
     chmod +x /usr/local/bin/local-php-security-checker; \
     \
     chmod +x /usr/local/bin/docker-entrypoint; \

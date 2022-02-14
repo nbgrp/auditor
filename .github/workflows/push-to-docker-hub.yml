@@ -10,6 +10,10 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
 
+      - name: Get version
+        id: get-version
+        run: echo "::set-output name=version::$(echo ${{ github.event.release.tag_name }} | cut -dv -f2)"
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -19,5 +23,9 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
+          build-args: |
+            AUDITOR_VERSION=${{ steps.get-version.outputs.version }}
           push: true
-          tags: nbgrp/auditor:latest
+          tags: |
+            nbgrp/auditor:${{ steps.get-version.outputs.version }}
+            nbgrp/auditor:latest

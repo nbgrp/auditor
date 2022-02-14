@@ -3,10 +3,13 @@ ARG PHP_VERSION=8.0.15
 
 FROM php:${PHP_VERSION}-cli-alpine
 
+ARG AUDITOR_VERSION
+
 LABEL project="nbgrp/auditor" \
-      version="0.5.0" \
+      version="${AUDITOR_VERSION}" \
       maintainer="amenshchikov@gmail.com"
 
+ENV SELF_RELEASE v$AUDITOR_VERSION
 ENV COMPOSER_HOME /composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
 

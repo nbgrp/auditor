@@ -1,0 +1,37 @@
+version: 2
+
+updates:
+  - package-ecosystem: composer
+    directory: "/phan"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: composer
+    directory: "/php-cs-fixer"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: composer
+    directory: "/phpcs"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: composer
+    directory: "/phpmd"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: composer
+    directory: "/phpmnd"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: composer
+    directory: "/phpstan"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: composer
+    directory: "/psalm"
+    schedule:
+      interval: "daily"

@@ -1,6 +1,5 @@
 {
     "require-dev": {
-        "phpmd/phpmd": "^2.10.2",
-        "roave/security-advisories": "dev-latest"
+        "phpmd/phpmd": "^2.11.1"
     }
 }

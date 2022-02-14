@@ -1,37 +1,42 @@
 version: 2
 
 updates:
-  - package-ecosystem: composer
-    directory: "/phan"
+  - package-ecosystem: "composer"
+    directory: "/tools/phan"
     schedule:
       interval: "daily"
 
-  - package-ecosystem: composer
-    directory: "/php-cs-fixer"
+  - package-ecosystem: "composer"
+    directory: "/tools/php-cs-fixer"
     schedule:
       interval: "daily"
 
-  - package-ecosystem: composer
-    directory: "/phpcs"
+  - package-ecosystem: "composer"
+    directory: "/tools/phpcs"
     schedule:
       interval: "daily"
 
-  - package-ecosystem: composer
-    directory: "/phpmd"
+  - package-ecosystem: "composer"
+    directory: "/tools/phpmd"
     schedule:
       interval: "daily"
 
-  - package-ecosystem: composer
-    directory: "/phpmnd"
+  - package-ecosystem: "composer"
+    directory: "/tools/phpmnd"
     schedule:
       interval: "daily"
 
-  - package-ecosystem: composer
-    directory: "/phpstan"
+  - package-ecosystem: "composer"
+    directory: "/tools/phpstan"
     schedule:
       interval: "daily"
 
-  - package-ecosystem: composer
-    directory: "/psalm"
+  - package-ecosystem: "composer"
+    directory: "/tools/psalm"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
       interval: "daily"

@@ -5,36 +5,43 @@ updates:
     directory: "/tools/phan"
     schedule:
       interval: "daily"
+    versioning-strategy: "increase-if-necessary"
 
   - package-ecosystem: "composer"
     directory: "/tools/php-cs-fixer"
     schedule:
       interval: "daily"
+    versioning-strategy: "increase-if-necessary"
 
   - package-ecosystem: "composer"
     directory: "/tools/phpcs"
     schedule:
       interval: "daily"
+    versioning-strategy: "increase-if-necessary"
 
   - package-ecosystem: "composer"
     directory: "/tools/phpmd"
     schedule:
       interval: "daily"
+    versioning-strategy: "increase-if-necessary"
 
   - package-ecosystem: "composer"
     directory: "/tools/phpmnd"
     schedule:
       interval: "daily"
+    versioning-strategy: "increase-if-necessary"
 
   - package-ecosystem: "composer"
     directory: "/tools/phpstan"
     schedule:
       interval: "daily"
+    versioning-strategy: "increase-if-necessary"
 
   - package-ecosystem: "composer"
     directory: "/tools/psalm"
     schedule:
       interval: "daily"
+    versioning-strategy: "increase-if-necessary"
 
   - package-ecosystem: "github-actions"
     directory: "/"

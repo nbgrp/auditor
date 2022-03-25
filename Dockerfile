@@ -7,7 +7,7 @@ ARG AUDITOR_VERSION
 
 LABEL project="nbgrp/auditor" \
       version="${AUDITOR_VERSION}" \
-      maintainer="amenshchikov@gmail.com"
+      maintainer="alexander.menshchikov@yandex.ru"
 
 ENV SELF_RELEASE v$AUDITOR_VERSION
 ENV COMPOSER_HOME /composer

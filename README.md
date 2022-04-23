@@ -5,13 +5,14 @@ which allows to run several code quality tools parallel.
 
 Currently, the Auditor supports the following code quality tools:
 
-- Phan
-- PHP CS Fixer
-- PHP_CodeSniffer
-- PHP Mess Detector
-- PHP Magic Number Detector
-- PHPStan
-- Psalm
+- [Deptrac](https://github.com/qossmic/deptrac)
+- [Phan](https://github.com/phan/phan)
+- [PHP CS Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+- [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+- [PHP Mess Detector](https://github.com/phpmd/phpmd)
+- [PHP Magic Number Detector](https://github.com/povils/phpmnd)
+- [PHPStan](https://github.com/phpstan/phpstan)
+- [Psalm](https://github.com/vimeo/psalm)
 
 ## Usage
 

@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push to Docker Hub
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           build-args: |
             AUDITOR_VERSION=${{ steps.get-version.outputs.version }}

@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.1.3
+ARG PHP_VERSION=8.1.8
 
 
 FROM php:${PHP_VERSION}-cli-alpine
@@ -61,11 +61,15 @@ RUN set -ex; \
     chmod +x /usr/local/bin/docker-entrypoint; \
     \
     composer self-update; \
-    composer global require \
+    \
+    composer global config --no-plugins allow-plugins.ergebnis/composer-normalize true; \
+    composer global config --no-plugins allow-plugins.phpro/grumphp-shim true; \
+    \
+    composer global require --no-scripts --no-progress \
         ergebnis/composer-normalize \
         qossmic/deptrac-shim \
         phpro/grumphp-shim \
-    --no-scripts --no-progress; \
+    ; \
     \
     composer install --working-dir=/tools/phan --prefer-dist --no-scripts --no-progress; \
     composer install --working-dir=/tools/php-cs-fixer --prefer-dist --no-scripts --no-progress; \

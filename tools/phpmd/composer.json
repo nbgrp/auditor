@@ -1,5 +1,5 @@
 {
     "require-dev": {
-        "phpmd/phpmd": "^2.11.1"
+        "phpmd/phpmd": "^2.13.0"
     }
 }

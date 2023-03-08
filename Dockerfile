@@ -55,7 +55,7 @@ RUN set -ex; \
     ln -s ${PHP_INI_DIR}/php.ini-production ${PHP_INI_DIR}/php.ini; \
     printf "memory_limit = -1\n" >  $PHP_INI_DIR/conf.d/memory_unlimit.ini; \
     \
-    wget -O /usr/local/bin/local-php-security-checker https://github.com/fabpot/local-php-security-checker/releases/download/v1.2.0/local-php-security-checker_1.2.0_linux_amd64; \
+    wget -O /usr/local/bin/local-php-security-checker https://github.com/fabpot/local-php-security-checker/releases/download/v2.0.6/local-php-security-checker_2.0.6_linux_amd64; \
     chmod +x /usr/local/bin/local-php-security-checker; \
     \
     chmod +x /usr/local/bin/docker-entrypoint; \

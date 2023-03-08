@@ -12,7 +12,7 @@ jobs:
 
       - name: Get version
         id: get-version
-        run: echo "::set-output name=version::$(echo ${{ github.event.release.tag_name }} | cut -dv -f2)"
+        run: echo "VERSION=$(echo ${{ github.event.release.tag_name }} | cut -dv -f2)" >> $GITHUB_OUTPUT
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -24,8 +24,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           build-args: |
-            AUDITOR_VERSION=${{ steps.get-version.outputs.version }}
+            AUDITOR_VERSION=${{ steps.get-version.outputs.VERSION }}
           push: true
           tags: |
-            nbgrp/auditor:${{ steps.get-version.outputs.version }}
+            nbgrp/auditor:${{ steps.get-version.outputs.VERSION }}
             nbgrp/auditor:latest

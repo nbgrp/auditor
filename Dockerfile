@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.1.16
+ARG PHP_VERSION=8.2.3
 
 
 FROM php:${PHP_VERSION}-cli-alpine
@@ -80,6 +80,7 @@ RUN set -ex; \
     composer install --working-dir=/tools/psalm --prefer-dist --no-scripts --no-progress
 
 ENV PATH /composer/vendor/bin:/tools/phan/vendor/bin:/tools/php-cs-fixer/vendor/bin:/tools/phpcs/vendor/bin:/tools/phpmd/vendor/bin:/tools/phpmnd/vendor/bin:/tools/phpstan/vendor/bin:/tools/psalm/vendor/bin:$PATH
+ENV PHP_CS_FIXER_IGNORE_ENV 1
 
 ENTRYPOINT [ "docker-entrypoint" ]
 CMD [ "grumphp", "run" ]

@@ -1,5 +1,7 @@
 # Auditor
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/nbgrp/auditor)](https://img.shields.io/docker/pulls/nbgrp/auditor)
+
 The Auditor is a toolbox based on the awesome [GrumPHP](https://github.com/phpro/grumphp) utility
 which allows to run several code quality tools parallel.
 

@@ -6,6 +6,6 @@
         "symfony/polyfill-mbstring": "*"
     },
     "require-dev": {
-        "povils/phpmnd": "^v3.2.0"
+        "povils/phpmnd": "^v3.3.0"
     }
 }

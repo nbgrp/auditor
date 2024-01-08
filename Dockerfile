@@ -41,6 +41,7 @@ RUN set -ex; \
         opcache \
         pdo_pgsql \
         redis \
+        relay \
         sockets \
         uuid \
     ; \

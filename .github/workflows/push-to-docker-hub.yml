@@ -14,6 +14,12 @@ jobs:
         id: get-version
         run: echo "VERSION=$(echo ${{ github.event.release.tag_name }} | cut -dv -f2)" >> $GITHUB_OUTPUT
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -23,8 +29,10 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v5
         with:
+          context: .
           build-args: |
             AUDITOR_VERSION=${{ steps.get-version.outputs.VERSION }}
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
             nbgrp/auditor:${{ steps.get-version.outputs.VERSION }}

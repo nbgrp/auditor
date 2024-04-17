@@ -8,6 +8,6 @@
         "symfony/polyfill-php80": "*"
     },
     "require-dev": {
-        "povils/phpmnd": "^v3.4.0"
+        "povils/phpmnd": "^v3.4.1"
     }
 }

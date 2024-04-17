@@ -1,7 +1,7 @@
-ARG PHP_VERSION=8.3.1
+ARG PHP_VERSION=8.3.6
 
 
-FROM php:${PHP_VERSION}-cli-alpine
+FROM --platform=$BUILDPLATFORM php:${PHP_VERSION}-cli-alpine
 
 ARG AUDITOR_VERSION
 

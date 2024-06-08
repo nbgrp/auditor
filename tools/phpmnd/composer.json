@@ -3,11 +3,9 @@
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-intl-grapheme": "*",
         "symfony/polyfill-intl-normalizer": "*",
-        "symfony/polyfill-mbstring": "*",
-        "symfony/polyfill-php73": "*",
-        "symfony/polyfill-php80": "*"
+        "symfony/polyfill-mbstring": "*"
     },
     "require-dev": {
-        "povils/phpmnd": "^v3.4.1"
+        "povils/phpmnd": "^v3.5.0"
     }
 }

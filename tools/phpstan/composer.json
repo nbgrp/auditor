@@ -1,5 +1,5 @@
 {
     "require-dev": {
-        "phpstan/phpstan": "^1.11.4"
+        "phpstan/phpstan": "^1.12.3"
     }
 }

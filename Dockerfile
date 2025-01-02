@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.4.2
+ARG PHP_VERSION=8.3.15
 
 
 FROM --platform=$BUILDPLATFORM php:${PHP_VERSION}-cli-alpine

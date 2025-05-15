@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.3.15
+ARG PHP_VERSION=8.4.7
 
 
 FROM --platform=$BUILDPLATFORM php:${PHP_VERSION}-cli-alpine
@@ -57,7 +57,7 @@ RUN set -ex; \
     ln -s ${PHP_INI_DIR}/php.ini-production ${PHP_INI_DIR}/php.ini; \
     printf "memory_limit = -1\n" >  $PHP_INI_DIR/conf.d/memory_unlimit.ini; \
     \
-    wget -O /usr/local/bin/local-php-security-checker https://github.com/fabpot/local-php-security-checker/releases/download/v2.0.6/local-php-security-checker_2.0.6_linux_amd64; \
+    wget -O /usr/local/bin/local-php-security-checker https://github.com/fabpot/local-php-security-checker/releases/download/v2.1.3/local-php-security-checker_linux_amd64; \
     chmod +x /usr/local/bin/local-php-security-checker; \
     \
     chmod +x /usr/local/bin/docker-entrypoint; \

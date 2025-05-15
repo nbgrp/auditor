@@ -9,9 +9,9 @@ LABEL project="nbgrp/auditor" \
       version="${AUDITOR_VERSION}" \
       maintainer="alexander.menshchikov@yandex.ru"
 
-ENV SELF_RELEASE v$AUDITOR_VERSION
-ENV COMPOSER_HOME /composer
-ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV SELF_RELEASE=v$AUDITOR_VERSION
+ENV COMPOSER_HOME=/composer
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/
@@ -81,8 +81,8 @@ RUN set -ex; \
     composer install --working-dir=/tools/phpstan --prefer-dist --no-scripts --no-progress; \
     composer install --working-dir=/tools/psalm --prefer-dist --no-scripts --no-progress
 
-ENV PATH /composer/vendor/bin:/tools/phan/vendor/bin:/tools/php-cs-fixer/vendor/bin:/tools/phpcs/vendor/bin:/tools/phpmd/vendor/bin:/tools/phpmnd/vendor/bin:/tools/phpstan/vendor/bin:/tools/psalm/vendor/bin:$PATH
-ENV PHP_CS_FIXER_IGNORE_ENV 1
+ENV PATH=/composer/vendor/bin:/tools/phan/vendor/bin:/tools/php-cs-fixer/vendor/bin:/tools/phpcs/vendor/bin:/tools/phpmd/vendor/bin:/tools/phpmnd/vendor/bin:/tools/phpstan/vendor/bin:/tools/psalm/vendor/bin:$PATH
+ENV PHP_CS_FIXER_IGNORE_ENV=1
 
 ENTRYPOINT [ "docker-entrypoint" ]
 CMD [ "grumphp", "run" ]

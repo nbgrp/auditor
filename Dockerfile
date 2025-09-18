@@ -36,9 +36,7 @@ RUN set -ex; \
         imagick \
         intl \
         ldap \
-        mbstring \
         memcache \
-        opcache \
         pdo_pgsql \
         redis \
         relay \

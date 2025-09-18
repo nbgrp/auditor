@@ -9,8 +9,8 @@
         "symfony/polyfill-php84": "*"
     },
     "require-dev": {
-        "psalm/plugin-symfony": "^v5.2.7",
-        "vimeo/psalm": "^6.13.1"
+        "psalm/plugin-symfony": "^v5",
+        "vimeo/psalm": "^6"
     },
     "config": {
         "allow-plugins": {

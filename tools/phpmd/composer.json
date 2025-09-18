@@ -4,6 +4,6 @@
         "symfony/polyfill-mbstring": "*"
     },
     "require-dev": {
-        "phpmd/phpmd": "^2.15.0"
+        "phpmd/phpmd": "^2"
     }
 }

@@ -7,6 +7,6 @@
         "symfony/polyfill-php80": "*"
     },
     "require-dev": {
-        "phan/phan": "^5"
+        "phan/phan": "^6"
     }
 }
